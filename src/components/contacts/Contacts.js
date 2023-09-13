@@ -82,7 +82,7 @@ function Contacts(props) {
     return (
         < Container >
             <Row className="px-4 my-5">
-                <Col><h1>Contacts</h1></Col>
+                <Col><h1>Contacts V2</h1></Col>
             </Row>
             <Row>
                 {
