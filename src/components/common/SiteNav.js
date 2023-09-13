@@ -1,9 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
 
 function SiteNav(props) {
     const navigate = useNavigate()
@@ -35,8 +36,12 @@ function SiteNav(props) {
                                 {
                                     props.isAuthenticated === false && (
                                         <Nav className="ms-md-auto">
-                                            <Nav.Link href="/login">Login</Nav.Link>
-                                            <Nav.Link href="/register">Register</Nav.Link>
+                                            <Link to='/login'>
+                                                <Button variant="outline-primary">Login &gt;&gt;</Button>
+                                            </Link>
+                                            <Link to='/register'>
+                                                <Button variant="outline-primary">Register &gt;&gt;</Button>
+                                            </Link>
                                         </Nav>
                                     )
                                 }            
