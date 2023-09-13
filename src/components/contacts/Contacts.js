@@ -31,15 +31,11 @@ function Contacts(props) {
             const contactsList = contactsData.data.listContacts.items;
             setContacts(contactsList);
 
-            contacts.map(async (contact, indx) => {
+            const image_access_urls = await Promise.all(contacts.map(async (contact, indx) => {
                 const contactProfilePicPath = contacts[indx].profilePicPath;
-                try {
-                    const contactProfilePicPathURI = await Storage.get(contactProfilePicPath, {expires: 60});
-                    setProfilePicPaths([...profilePicPaths, contactProfilePicPathURI]);
-                } catch(err) {
-                    console.log('error', err);
-                }
-            });
+                return Storage.get(contactProfilePicPath);
+            }));
+            await setProfilePicPaths(image_access_urls);
         } catch(err) {
             console.log('error', err);
         }
@@ -63,7 +59,7 @@ function Contacts(props) {
 
             // Persist new Contact
             await API.graphql(graphqlOperation(createContact, {input: newContact}));
-
+            
             getContacts()
         } catch(err) {
             console.log('error', err);
@@ -75,9 +71,13 @@ function Contacts(props) {
             props.isAuthenticated !== true && (
                 navigate('/')
             )
-            getContacts()
+            // getContacts()
         }
     }, []);
+
+    useEffect(() => {
+        getContacts()
+    }, [contacts]);
 
     return (
         < Container >

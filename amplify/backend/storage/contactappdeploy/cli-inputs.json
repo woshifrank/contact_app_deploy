@@ -1,0 +1,14 @@
+{
+  "resourceName": "contactappdeploy",
+  "policyUUID": "1b1d21bf",
+  "bucketName": "contactappdeploy",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

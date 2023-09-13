@@ -1,0 +1,26 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-contactappdeploy-prod-104832-authRole",
+      "UnauthRoleArn": "arn:aws:iam::697736413238:role/amplify-contactappdeploy-prod-104832-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::697736413238:role/amplify-contactappdeploy-prod-104832-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-contactappdeploy-prod-104832-deployment",
+      "UnauthRoleName": "amplify-contactappdeploy-prod-104832-unauthRole",
+      "StackName": "amplify-contactappdeploy-prod-104832",
+      "StackId": "arn:aws:cloudformation:us-east-1:697736413238:stack/amplify-contactappdeploy-prod-104832/9cdb1000-5244-11ee-bfb1-127d83cfa0e1",
+      "AmplifyAppId": "d15c7dv7cv046f"
+    },
+    "categories": {
+      "auth": {
+        "contactappdeploy059cea12": {}
+      },
+      "storage": {
+        "contactappdeploy": {}
+      },
+      "api": {
+        "contactappdeploy": {}
+      }
+    }
+  }
+}
